@@ -1,0 +1,17 @@
+if y = 3 then (hello else world 0
+if xb = 0005 then (x + 1 else x - 1 ,
+true and false or not true
+x <= 10
+"This is a string"
+x'_prime + x''_prime
+x+y/z=1
+@123
+ifthen
+^&
+if0=5
+then&&if
+123abc
+0if = 5
+"Hehe lol
+iff"
+if-then-else

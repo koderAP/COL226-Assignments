@@ -1,0 +1,5 @@
+mem((X,X),refsymtranclos(L,S)):- mem(X,S),!.
+mem((X,Y),refsymtranclos(L,S)):- mem((X,Z),L),diffI(L,[(X,_)],L1),mem((Z,Y),refsymtranclos(L1,S)).
+mem((X,Y),refsymtranclos(L,S)):- mem((Z,Y),L),diffI(L,[(Y,_)],L1),mem((Z,X),refsymtranclos(L1,S)).
+?hastype([(x,BoolT)],Gt(5,B),BoolT),mem((X,X),refsymtranclos(L,S)).
+?mem((x,X),refsymtranclos(L,S)).

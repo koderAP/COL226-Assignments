@@ -1,0 +1,47 @@
+Program (
+    Clause [
+        Rule (
+            Head (Atom_Symbol: "mem", [Tuple (Variable "X"; Variable "X"); Function : "refsymtranclos", args : [Variable "L"; Variable "S"]]),
+            Body [
+              Atom_Symbol: "mem", [Variable "X"; Variable "S"],
+              Atom_Symbol: "!", []
+            ]
+          )
+        ]
+
+    Clause [
+        Rule (
+            Head (Atom_Symbol: "mem", [Tuple (Variable "X"; Variable "Y"); Function : "refsymtranclos", args : [Variable "L"; Variable "S"]]),
+            Body [
+              Atom_Symbol: "mem", [Tuple (Variable "X"; Variable "Z"); Variable "L"],
+              Atom_Symbol: "diffI", [Variable "L"; List [Tuple (Variable "X"; Variable "_")]; Variable "L1"],
+              Atom_Symbol: "mem", [Tuple (Variable "Z"; Variable "Y"); Function : "refsymtranclos", args : [Variable "L1"; Variable "S"]]
+            ]
+          )
+        ]
+
+    Clause [
+        Rule (
+            Head (Atom_Symbol: "mem", [Tuple (Variable "X"; Variable "Y"); Function : "refsymtranclos", args : [Variable "L"; Variable "S"]]),
+            Body [
+              Atom_Symbol: "mem", [Tuple (Variable "Z"; Variable "Y"); Variable "L"],
+              Atom_Symbol: "diffI", [Variable "L"; List [Tuple (Variable "Y"; Variable "_")]; Variable "L1"],
+              Atom_Symbol: "mem", [Tuple (Variable "Z"; Variable "X"); Function : "refsymtranclos", args : [Variable "L1"; Variable "S"]]
+            ]
+          )
+        ]
+
+    Clause [
+        Goal (
+            [ Atom_Symbol: "hastype", [List [Tuple (Constant "x"; Variable "BoolT")]; Function : "Gt", args : [Constant "5"; Variable "B"]; Variable "BoolT"],
+            Atom_Symbol: "mem", [Tuple (Variable "X"; Variable "X"); Function : "refsymtranclos", args : [Variable "L"; Variable "S"]]]
+          )
+        ]
+
+    Clause [
+        Goal (
+            [ Atom_Symbol: "mem", [Tuple (Constant "x"; Variable "X"); Function : "refsymtranclos", args : [Variable "L"; Variable "S"]]]
+          )
+        ]
+
+)
